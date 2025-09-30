@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { NavBar } from "../../components/ui/tubelight-navbar";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
@@ -22,11 +23,19 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const navItems = [
+    { name: "Home", url: "/" },
+    { name: "Learning Lounge", url: "/learning-lounge" },
+    { name: "What we do", url: "/what-we-do" },
+    { name: "Library", url: "/library" },
+    { name: "Pricing", url: "/pricing" },
+  ];
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${inter.variable} ${geistMono.variable} antialiased`}
       >
+        <NavBar items={navItems} />
         {children}
       </body>
     </html>
