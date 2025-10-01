@@ -3,9 +3,14 @@
 import React, { useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import Link from "next/link"
+import Image from "next/image"
 import { LucideIcon } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { usePathname } from "next/navigation"
+import { FlowButton } from "./flow-button"
+import { Poppins } from "next/font/google"
+
+const poppins = Poppins({ subsets: ["latin"], weight: ["400", "600"] })
 
 interface NavItem {
   name: string
@@ -26,7 +31,6 @@ export function NavBar({ items, className }: NavBarProps) {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768)
     }
-
     handleResize()
     window.addEventListener("resize", handleResize)
     return () => window.removeEventListener("resize", handleResize)
@@ -35,45 +39,63 @@ export function NavBar({ items, className }: NavBarProps) {
   return (
     <div
       className={cn(
-        "fixed bottom-0 sm:top-0 left-1/2 -translate-x-1/2 z-50 mb-6 sm:pt-6 font-sans",
-        className,
+        "fixed top-6 left-1/2 -translate-x-1/2 z-50 w-full max-w-6xl px-6",
+        poppins.className,
+        className
       )}
     >
-      <div className="flex items-center gap-3 bg-background/5 border border-[#e12fca] backdrop-blur-lg py-1 px-1 rounded-full shadow-lg">
-        {items.map((item) => {
-          const Icon = item.icon
-          const isActive = pathname === item.url
+      <div className="flex items-center justify-between bg-white border border-[#e12fca] backdrop-blur-md py-3 px-6 rounded-full shadow-md">
+        {/* Logo */}
+        <Link href="/" className="flex items-center flex-shrink-0">
+          <Image
+            src="/img/demandify_media.png"
+            alt="Demandify Media"
+            width={150}
+            height={150}
+            className="object-contain"
+          />
+        </Link>
 
-          return (
-            <Link
-              key={item.name}
-              href={item.url}
-              className={cn(
-                "relative cursor-pointer text-sm font-semibold px-6 py-2 rounded-full transition-colors",
-                "text-foreground/80 hover:text-primary",
-                isActive && "bg-muted text-primary",
-              )}
-            >
-              <span className="hidden md:inline">{item.name}</span>
-              <span className="md:hidden">
-                {Icon ? <Icon size={18} strokeWidth={2.5} /> : item.name}
-              </span>
-              {isActive && (
-                <motion.div
-                  layoutId="lamp"
-                  className="absolute inset-0 w-full bg-primary/5 rounded-full -z-10"
-                  initial={false}
-                  transition={{
-                    type: "spring",
-                    stiffness: 300,
-                    damping: 30,
-                  }}
-                >
-                </motion.div>
-              )}
-            </Link>
-          )
-        })}
+        {/* Nav Items */}
+        <div className="hidden md:flex items-center gap-10 ml-10 text-xl">
+          {items.map((item) => {
+            const Icon = item.icon
+            const isActive = pathname === item.url
+            return (
+              <Link
+                key={item.name}
+                href={item.url}
+                className={cn(
+                  "relative text-lg font-medium text-gray-700 hover:text-gray-900 transition-colors",
+                  isActive && "text-gray-900"
+                )}
+              >
+                {item.name}
+                {isActive && (
+                  <motion.div
+                    layoutId="active"
+                    className="absolute -bottom-1 left-1/2 -translate-x-1/2 h-0.5 bg-[#b300a5]"
+                    initial={{ width: 0 }}
+                    animate={{ width: "60%" }}
+                    transition={{ duration: 0.4, ease: "easeInOut" }}
+                  />
+                )}
+              </Link>
+            )
+          })}
+        </div>
+
+        {/* Contact Button */}
+        <div className="ml-6 hidden md:block">
+          <FlowButton text="Contact" />
+        </div>
+
+        {/* Mobile menu placeholder */}
+        {isMobile && (
+          <div className="ml-auto">
+            {/* Mobile menu icon can go here */}
+          </div>
+        )}
       </div>
     </div>
   )
