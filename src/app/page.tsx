@@ -8,6 +8,8 @@ import { CardContainer, CardBody, CardItem } from '../../components/ui/3d-card'
 import { SlidingNumber } from '../../components/ui/Sliding-Numbers'
 import { CircularProgress } from '../../components/ui/circular-progress'
 import { GlowCard } from '../../components/ui/spotlight-card'
+import { LogoSlider } from '../../components/ui/logo-slider'
+import { InfiniteMovingCards } from '../../components/ui/infinite-moving-cards'
 
 export const metadata: Metadata = {
   title: 'Demandify Media | Demand Generation, ABM, Content Syndication',
@@ -81,6 +83,28 @@ export default function Home() {
           </CardContainer>
         </div>
       </section>
+
+      
+
+      {/* Trusted By Section */}
+      <section className="container mx-auto px-6 pt-10 pb-14 lg:pt-12 lg:pb-20">
+        <div className="max-w-6xl mx-auto">
+          {/* Heading */}
+          <div className="text-center mb-8 lg:mb-10">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-[#c11bbb]/10 border border-[#c11bbb]/20 text-[#c11bbb] text-xs font-semibold tracking-wider uppercase">
+              Trusted by the world’s best
+            </div>
+            <h3 className="mt-4 text-2xl sm:text-3xl font-extrabold text-black">
+              Global brands partner with Demandify
+            </h3>
+          </div>
+
+          {/* Logo Slider */}
+          <LogoSlider className="mt-4" itemClassName="opacity-90" speedMs={22000} />
+        </div>
+      </section>
+
+      
 
       {/* Target Audience Section */}
       <section className="container mx-auto px-6 py-16 lg:py-24">
@@ -365,7 +389,9 @@ export default function Home() {
           {/* Bottom CTA */}
           <div className="mt-16 text-center">
             <p className="text-neutral-600 mb-6 text-base">Ready to write your success story?</p>
-            <FlowButton text="Explore All Case Studies" />
+            <div className="flex justify-center">
+              <FlowButton text="Explore All Case Studies" />
+            </div>
           </div>
         </div>
       </section>
@@ -492,6 +518,64 @@ export default function Home() {
           </div>
 
           
+        </div>
+      </section>
+      
+      {/* Testimonials Section - Moving Cards (placed below Features) */}
+      <section className="relative container mx-auto px-6 pt-12 pb-20 lg:pt-16 lg:pb-28 overflow-hidden">
+        {/* Subtle grid background */}
+        <div className="absolute inset-0 opacity-[0.03] pointer-events-none select-none">
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage:
+                "linear-gradient(#c11bbb 1px, transparent 1px), linear-gradient(90deg, #c11bbb 1px, transparent 1px)",
+              backgroundSize: "50px 50px",
+            }}
+          />
+        </div>
+
+        <div className="relative max-w-7xl mx-auto">
+          {/* Heading */}
+          <div className="text-center mb-10 lg:mb-14">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight text-black">
+              Fueling Success,
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#c11bbb] to-[#d633cd]">
+                LOVED by Customers
+              </span>
+            </h2>
+          </div>
+
+          {/* Moving Testimonials */}
+          <InfiniteMovingCards
+            className="mx-auto"
+            direction="left"
+            speed="normal"
+            pauseOnHover
+            items={[
+              {
+                quote:
+                  "Partnering with Demandify Media helped us scale demand with consistent quality and strong collaboration throughout.",
+                name: "Abhishek Hegde",
+                title: "Head of Marketing, Niveus",
+                logo: "/img/niveus.png",
+              },
+              {
+                quote:
+                  "Smooth execution and measurable outcomes. The pipeline lift from high-intent accounts was clear within weeks.",
+                name: "Nishanth S",
+                title: "Growth Lead, Paycor",
+                logo: "/img/paycor.png",
+              },
+              {
+                quote:
+                  "Well-structured delivery and responsive team. We saw better conversion and deeper engagement across segments.",
+                name: "Priya Sharma",
+                title: "VP Marketing, Red Hat",
+                logo: "/img/Redhat.png",
+              },
+            ]}
+          />
         </div>
       </section>
     </main>
