@@ -7,6 +7,7 @@ import { FlowButton as FlowButton2 } from '../../components/ui/flow-button2'
 import { CardContainer, CardBody, CardItem } from '../../components/ui/3d-card'
 import { SlidingNumber } from '../../components/ui/Sliding-Numbers'
 import { CircularProgress } from '../../components/ui/circular-progress'
+import { GlowCard } from '../../components/ui/spotlight-card'
 
 export const metadata: Metadata = {
   title: 'Demandify Media | Demand Generation, ABM, Content Syndication',
@@ -188,9 +189,9 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Case Studies Section - Futuristic Redesign */}
-      <section className="relative container mx-auto px-6 py-20 lg:py-32 overflow-hidden">
+ 
+     {/* Case Studies Section - Futuristic Redesign */}
+      <section className="relative container mx-auto px-6 pt-12 pb-20 lg:pt-16 lg:pb-28 overflow-hidden">
         {/* Animated Background Grid */}
         <div className="absolute inset-0 opacity-[0.03]">
           <div className="absolute inset-0" style={{
@@ -205,7 +206,7 @@ export default function Home() {
 
         <div className="relative max-w-7xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-16 lg:mb-24">
+          <div className="text-center mb-12 lg:mb-16">
             <div className="inline-block mb-4">
               <span className="px-4 py-2 rounded-full bg-gradient-to-r from-[#b300a5]/10 to-[#d946ef]/10 border border-[#b300a5]/20 text-[#b300a5] text-xs font-semibold tracking-wider uppercase backdrop-blur-sm">
                 Success Stories
@@ -366,6 +367,131 @@ export default function Home() {
             <p className="text-neutral-600 mb-6 text-base">Ready to write your success story?</p>
             <FlowButton text="Explore All Case Studies" />
           </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="relative container mx-auto px-6 py-20 lg:py-32 overflow-hidden">
+        {/* Animated Background Grid */}
+        <div className="absolute inset-0 opacity-[0.03]">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `linear-gradient(#c11bbb 1px, transparent 1px), linear-gradient(90deg, #c11bbb 1px, transparent 1px)`,
+            backgroundSize: '50px 50px'
+          }} />
+        </div>
+
+        {/* Gradient Orbs */}
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#c11bbb]/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#c11bbb]/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+
+        <div className="relative max-w-7xl mx-auto">
+          {/* Header */}
+          <div className="text-center mb-16 lg:mb-24">
+            <div className="inline-block mb-4">
+              <span className="px-4 py-2 rounded-full bg-gradient-to-r from-[#c11bbb]/10 to-[#c11bbb]/10 border border-[#c11bbb]/20 text-[#c11bbb] text-xs font-semibold tracking-wider uppercase backdrop-blur-sm">
+                Features
+              </span>
+            </div>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c11bbb] via-[#c11bbb] to-[#c11bbb] animate-gradient bg-[length:200%_auto]">
+                Powerful Features
+              </span>
+              <br />
+              <span className="text-black">for Your Success</span>
+            </h2>
+            <p className="mt-6 text-base sm:text-lg text-neutral-600 max-w-3xl mx-auto font-light">
+              Discover the cutting-edge tools and capabilities that drive exceptional results
+            </p>
+          </div>
+
+          {/* Features Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-4xl mx-auto items-stretch">
+            {/* Feature 1: Intent Data Bank */}
+            <GlowCard 
+              glowColor="brand" 
+              size="lg" 
+              customSize
+              className="w-full h-full max-w-md mx-auto bg-white border border-neutral-200 shadow-2xl"
+            >
+              <div className="flex flex-col h-full p-5">
+                {/* Heading */}
+                <h3 className="text-2xl font-extrabold text-[#d734cc] mb-2 text-left">Intent-Verified Leads</h3>
+                <p className="text-sm text-neutral-700 mb-3 text-left">
+                  Engage global audiences by showing clear intent and drive demand using omnichannel, data-driven solutions from Demandify.
+                </p>
+
+                {/* Image */}
+                <div className="relative w-full aspect-[16/10] mb-4 overflow-hidden rounded-2xl shadow-lg border border-neutral-100">
+                  <Image src="/img/Verified%20Leads.png" alt="Verified Leads" fill className="object-cover" />
+                </div>
+
+                {/* Points */}
+                <div className="space-y-2.5 text-left">
+                  <div className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-[#c11bbb] rounded-full mt-1.5 flex-shrink-0"></div>
+                    <p className="text-sm text-neutral-700 leading-snug">Global first-party audience profiles</p>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-[#c11bbb] rounded-full mt-1.5 flex-shrink-0"></div>
+                    <p className="text-sm text-neutral-700 leading-snug">Intent signals captured per week</p>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-[#c11bbb] rounded-full mt-1.5 flex-shrink-0"></div>
+                    <p className="text-sm text-neutral-700 leading-snug">Monthly views on our B2B properties</p>
+                  </div>
+                </div>
+
+                {/* Button */}
+                <div className="mt-auto pt-3">
+                  <FlowButton2 text="Learn more" />
+                </div>
+              </div>
+            </GlowCard>
+
+            {/* Feature 2: Content Syndication */}
+            <GlowCard 
+              glowColor="brand" 
+              size="lg" 
+              customSize
+              className="w-full h-full max-w-md mx-auto bg-white border border-neutral-200 shadow-2xl"
+            >
+              <div className="flex flex-col h-full p-5">
+                {/* Heading */}
+                <h3 className="text-2xl font-extrabold text-[#d734cc] mb-2 text-left">Boost ROI with risk-free ABM</h3>
+                <p className="text-sm text-neutral-700 mb-3 text-left">
+                  Transform your top accounts with intent-driven ABM orchestration, leading to a more robust and valuable pipeline.
+                </p>
+
+                {/* Image */}
+                <div className="relative w-full aspect-[16/10] mb-4 overflow-hidden rounded-2xl shadow-lg border border-neutral-100">
+                  <Image src="/img/Boost%20ROI%20with%20risk-free%20ABM.png" alt="Boost ROI with risk-free ABM" fill className="object-cover" />
+                </div>
+
+                {/* Points */}
+                <div className="space-y-2.5 text-left">
+                  <div className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-[#c11bbb] rounded-full mt-1.5 flex-shrink-0"></div>
+                    <p className="text-sm text-neutral-700 leading-snug">Pinpoint high-intent accounts and streamline sales opportunities</p>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-[#c11bbb] rounded-full mt-1.5 flex-shrink-0"></div>
+                    <p className="text-sm text-neutral-700 leading-snug">Boost awareness and engagement across channels</p>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-[#c11bbb] rounded-full mt-1.5 flex-shrink-0"></div>
+                    <p className="text-sm text-neutral-700 leading-snug">Manage multi-channel campaigns smoothly</p>
+                  </div>
+                </div>
+
+                {/* Button */}
+                <div className="mt-auto pt-3">
+                  <FlowButton2 text="Learn more" />
+                </div>
+              </div>
+            </GlowCard>
+          </div>
+
+          
         </div>
       </section>
     </main>
