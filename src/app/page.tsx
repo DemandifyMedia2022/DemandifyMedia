@@ -6,6 +6,7 @@ import { FlowButton } from '../../components/ui/flow-button'
 import { FlowButton as FlowButton2 } from '../../components/ui/flow-button2'
 import { CardContainer, CardBody, CardItem } from '../../components/ui/3d-card'
 import { SlidingNumber } from '../../components/ui/Sliding-Numbers'
+import { CircularProgress } from '../../components/ui/circular-progress'
 
 export const metadata: Metadata = {
   title: 'Demandify Media | Demand Generation, ABM, Content Syndication',
@@ -33,14 +34,14 @@ export default function Home() {
         <div className="grid grid-cols-1 lg:grid-cols-2 place-items-center gap-8 sm:gap-10 lg:gap-16">
           {/* Left: Copy */}
           <div className="max-w-xl mx-auto lg:mx-0 text-center lg:text-left">
-            <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight text-black">
+            <h1 className="text-3xl sm:text-4xl font-extrabold leading-tight text-black">
               AI-driven <span className="text-[#b300a5]">INTENT DATA</span>
             </h1>
-            <p className="mt-4 text-2xl sm:text-3xl text-black">
+            <p className="mt-4 text-xl sm:text-2xl text-black">
               That powers a <span className="text-[#b300a5] font-bold">25%</span> increase in
               conversion rates
             </p>
-            <p className="mt-6 max-w-xl text-sm sm:text-base text-neutral-700 mx-auto lg:mx-0">
+            <p className="mt-6 max-w-xl text-xs sm:text-sm text-neutral-700 mx-auto lg:mx-0">
               We zoom in on the most valuable prospects using a fusion of advanced
               technology and human skill to take you closer to your revenue
               objectives within no time.
@@ -110,11 +111,11 @@ export default function Home() {
 
           {/* Right: Content */}
           <div className="max-w-xl mx-auto lg:mx-0 text-center lg:text-left">
-            <h2 className="text-4xl sm:text-5xl font-extrabold leading-tight text-black">
+            <h2 className="text-3xl sm:text-4xl font-extrabold leading-tight text-black">
               Forge unbreakable connections with your{' '}
               <span className="text-[#b300a5]">target audience</span>
             </h2>
-            <p className="mt-4 text-sm sm:text-base text-neutral-700 mx-auto lg:mx-0">
+            <p className="mt-4 text-xs sm:text-sm text-neutral-700 mx-auto lg:mx-0">
               We offer relationships by using tailored communication approaches that are crucial in improving
               customer experience. At Demandify, we give you the power to engage with your high value accounts on a
               more personal level and build experiences around them that resonate and establish lasting trust.
@@ -124,30 +125,30 @@ export default function Home() {
             <div className="mt-8 grid grid-cols-3 gap-8 sm:gap-12 lg:gap-16">
               {/* Stat 1 */}
               <div className="text-center lg:text-left">
-                <div className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#b300a5]">
-                  <SlidingNumber value={42} className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#b300a5]" suffix="M+" animateOnScroll />
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#b300a5]">
+                  <SlidingNumber value={42} className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#b300a5]" suffix="M+" animateOnScroll />
                 </div>
-                <div className="mt-2 text-xs sm:text-sm font-medium text-black">
+                <div className="mt-2 text-[10px] sm:text-xs font-medium text-black">
                   Business Leaders
                 </div>
               </div>
 
               {/* Stat 2 */}
               <div className="text-center lg:text-left">
-                <div className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#b300a5]">
-                  <SlidingNumber value={14} className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#b300a5]" suffix="+" animateOnScroll />
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#b300a5]">
+                  <SlidingNumber value={14} className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#b300a5]" suffix="+" animateOnScroll />
                 </div>
-                <div className="mt-2 text-xs sm:text-sm font-medium text-black">
+                <div className="mt-2 text-[10px] sm:text-xs font-medium text-black">
                   Countries
                 </div>
               </div>
 
               {/* Stat 3 */}
               <div className="text-center lg:text-left">
-                <div className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#b300a5]">
-                  <SlidingNumber value={4} className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#b300a5]" suffix="+" animateOnScroll />
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#b300a5]">
+                  <SlidingNumber value={4} className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#b300a5]" suffix="+" animateOnScroll />
                 </div>
-                <div className="mt-2 text-xs sm:text-sm font-medium text-black">
+                <div className="mt-2 text-[10px] sm:text-xs font-medium text-black">
                   Functional Areas
                 </div>
               </div>
@@ -161,10 +162,10 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="text-center mb-12 lg:mb-16">
-            <h2 className="text-4xl sm:text-5xl font-extrabold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-[#b300a5] to-[#d946ef]">
+            <h2 className="text-3xl sm:text-4xl font-extrabold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-[#b300a5] to-[#d946ef]">
               Speed your way to revenue success
             </h2>
-            <p className="mt-4 text-base sm:text-lg text-neutral-600 max-w-3xl mx-auto">
+            <p className="mt-4 text-sm sm:text-base text-neutral-600 max-w-3xl mx-auto">
               Maximize revenues by optimizing processes and strategies, including aligning every aspect of your
               initiatives for maximum impact.
             </p>
@@ -172,134 +173,198 @@ export default function Home() {
 
           {/* Stats Cards Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-            {/* Card 1 */}
-            <div className="group relative bg-gradient-to-br from-white to-neutral-50 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-neutral-200/50 hover:border-[#b300a5]/30">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#b300a5]/5 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <CircularProgress 
+              percentage={99} 
+              label="Data Accuracy Globally with Access to Direct lines" 
+            />
+            <CircularProgress 
+              percentage={15} 
+              label="Content Consumption & Interaction Through Multi-Touch points" 
+            />
+            <CircularProgress 
+              percentage={25} 
+              label="Lead to Opportunity Conversion" 
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Case Studies Section - Futuristic Redesign */}
+      <section className="relative container mx-auto px-6 py-20 lg:py-32 overflow-hidden">
+        {/* Animated Background Grid */}
+        <div className="absolute inset-0 opacity-[0.03]">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `linear-gradient(#b300a5 1px, transparent 1px), linear-gradient(90deg, #b300a5 1px, transparent 1px)`,
+            backgroundSize: '50px 50px'
+          }} />
+        </div>
+
+        {/* Gradient Orbs */}
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#b300a5]/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#d946ef]/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+
+        <div className="relative max-w-7xl mx-auto">
+          {/* Header */}
+          <div className="text-center mb-16 lg:mb-24">
+            <div className="inline-block mb-4">
+              <span className="px-4 py-2 rounded-full bg-gradient-to-r from-[#b300a5]/10 to-[#d946ef]/10 border border-[#b300a5]/20 text-[#b300a5] text-xs font-semibold tracking-wider uppercase backdrop-blur-sm">
+                Success Stories
+              </span>
+            </div>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#b300a5] via-[#d946ef] to-[#b300a5] animate-gradient bg-[length:200%_auto]">
+                Case Studies
+              </span>
+              <br />
+              <span className="text-black">in Action</span>
+            </h2>
+            <p className="mt-6 text-base sm:text-lg text-neutral-600 max-w-3xl mx-auto font-light">
+              Witness the future of demand generation through our transformative client partnerships
+            </p>
+          </div>
+
+          {/* Case Study Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+            {/* Kaseya Card */}
+            <div className="group relative">
+              {/* Holographic border effect */}
+              <div className="absolute -inset-[1px] bg-gradient-to-r from-[#b300a5] via-[#d946ef] to-[#b300a5] rounded-2xl opacity-0 group-hover:opacity-100 blur-sm transition-all duration-500 animate-gradient bg-[length:200%_auto]" />
               
-              <div className="relative z-10">
-                {/* Circular Progress */}
-                <div className="flex justify-center mb-6">
-                  <div className="relative w-32 h-32">
-                    <svg className="transform -rotate-90 w-32 h-32">
-                      <circle
-                        cx="64"
-                        cy="64"
-                        r="56"
-                        stroke="currentColor"
-                        strokeWidth="8"
-                        fill="none"
-                        className="text-neutral-200"
+              <div className="relative bg-gradient-to-br from-white/90 to-white/50 backdrop-blur-xl rounded-2xl p-8 lg:p-10 border border-white/20 shadow-2xl hover:shadow-[#b300a5]/20 transition-all duration-500 group-hover:scale-[1.02] group-hover:-translate-y-2">
+                {/* Shine effect */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
+                
+                {/* Glow effect on hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#b300a5]/5 via-transparent to-[#d946ef]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
+                
+                <div className="relative z-10 flex flex-col items-center">
+                  {/* Logo Container with animated ring */}
+                  <div className="relative mb-10">
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#0066cc]/20 to-[#0066cc]/5 blur-xl group-hover:blur-2xl transition-all duration-500" />
+                    <div className="relative h-40 w-40 flex items-center justify-center rounded-full bg-gradient-to-br from-white to-neutral-50 shadow-lg group-hover:shadow-xl transition-all duration-500 border border-neutral-100 overflow-hidden">
+                      <Image
+                        src="/img/Kaseya.png"
+                        alt="Kaseya Logo"
+                        width={140}
+                        height={140}
+                        className="object-contain p-5 transform group-hover:scale-110 transition-transform duration-500"
                       />
-                      <circle
-                        cx="64"
-                        cy="64"
-                        r="56"
-                        stroke="currentColor"
-                        strokeWidth="8"
-                        fill="none"
-                        strokeDasharray={2 * Math.PI * 56}
-                        strokeDashoffset={2 * Math.PI * 56 * (1 - 0.99)}
-                        className="text-[#b300a5] transition-all duration-1000 ease-out"
-                        strokeLinecap="round"
-                      />
-                    </svg>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="text-4xl font-extrabold text-[#b300a5]">99%</span>
                     </div>
                   </div>
-                </div>
 
-                <h3 className="text-center text-base sm:text-lg font-semibold text-black leading-snug">
-                  Data Accuracy Globally<br />with Access to Direct lines
-                </h3>
+                  {/* Metrics */}
+                  <div className="w-full mb-8 space-y-3">
+                    <div className="flex justify-between items-center p-3 rounded-lg bg-gradient-to-r from-[#0066cc]/5 to-transparent border border-[#0066cc]/10">
+                      <span className="text-xs text-neutral-600 font-medium">ROI Increase</span>
+                      <span className="text-base font-bold text-[#0066cc]">+156%</span>
+                    </div>
+                    <div className="flex justify-between items-center p-3 rounded-lg bg-gradient-to-r from-[#b300a5]/5 to-transparent border border-[#b300a5]/10">
+                      <span className="text-xs text-neutral-600 font-medium">Lead Quality</span>
+                      <span className="text-base font-bold text-[#b300a5]">+89%</span>
+                    </div>
+                  </div>
+
+                  {/* Button */}
+                  <FlowButton2 text="View Case Study" />
+                </div>
               </div>
             </div>
 
-            {/* Card 2 */}
-            <div className="group relative bg-gradient-to-br from-white to-neutral-50 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-neutral-200/50 hover:border-[#b300a5]/30">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#b300a5]/5 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            {/* Kaspersky Card */}
+            <div className="group relative">
+              {/* Holographic border effect */}
+              <div className="absolute -inset-[1px] bg-gradient-to-r from-[#00a88e] via-[#b300a5] to-[#00a88e] rounded-2xl opacity-0 group-hover:opacity-100 blur-sm transition-all duration-500 animate-gradient bg-[length:200%_auto]" />
               
-              <div className="relative z-10">
-                {/* Circular Progress */}
-                <div className="flex justify-center mb-6">
-                  <div className="relative w-32 h-32">
-                    <svg className="transform -rotate-90 w-32 h-32">
-                      <circle
-                        cx="64"
-                        cy="64"
-                        r="56"
-                        stroke="currentColor"
-                        strokeWidth="8"
-                        fill="none"
-                        className="text-neutral-200"
+              <div className="relative bg-gradient-to-br from-white/90 to-white/50 backdrop-blur-xl rounded-2xl p-8 lg:p-10 border border-white/20 shadow-2xl hover:shadow-[#00a88e]/20 transition-all duration-500 group-hover:scale-[1.02] group-hover:-translate-y-2">
+                {/* Shine effect */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
+                
+                {/* Glow effect on hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#00a88e]/5 via-transparent to-[#b300a5]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
+                
+                <div className="relative z-10 flex flex-col items-center">
+                  {/* Logo Container with animated ring */}
+                  <div className="relative mb-10">
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#00a88e]/20 to-[#00a88e]/5 blur-xl group-hover:blur-2xl transition-all duration-500" />
+                    <div className="relative h-40 w-40 flex items-center justify-center rounded-full bg-gradient-to-br from-white to-neutral-50 shadow-lg group-hover:shadow-xl transition-all duration-500 border border-neutral-100 overflow-hidden">
+                      <Image
+                        src="/img/Kapersky.png"
+                        alt="Kaspersky Logo"
+                        width={140}
+                        height={140}
+                        className="object-contain p-5 transform group-hover:scale-110 transition-transform duration-500"
                       />
-                      <circle
-                        cx="64"
-                        cy="64"
-                        r="56"
-                        stroke="currentColor"
-                        strokeWidth="8"
-                        fill="none"
-                        strokeDasharray={2 * Math.PI * 56}
-                        strokeDashoffset={2 * Math.PI * 56 * (1 - 0.15)}
-                        className="text-[#b300a5] transition-all duration-1000 ease-out"
-                        strokeLinecap="round"
-                      />
-                    </svg>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="text-4xl font-extrabold text-[#b300a5]">15%</span>
                     </div>
                   </div>
-                </div>
 
-                <h3 className="text-center text-base sm:text-lg font-semibold text-black leading-snug">
-                  Content Consumption &<br />Interaction Through Multi-Touch points
-                </h3>
+                  {/* Metrics */}
+                  <div className="w-full mb-8 space-y-3">
+                    <div className="flex justify-between items-center p-3 rounded-lg bg-gradient-to-r from-[#00a88e]/5 to-transparent border border-[#00a88e]/10">
+                      <span className="text-xs text-neutral-600 font-medium">Conversion Rate</span>
+                      <span className="text-base font-bold text-[#00a88e]">+142%</span>
+                    </div>
+                    <div className="flex justify-between items-center p-3 rounded-lg bg-gradient-to-r from-[#b300a5]/5 to-transparent border border-[#b300a5]/10">
+                      <span className="text-xs text-neutral-600 font-medium">Pipeline Growth</span>
+                      <span className="text-base font-bold text-[#b300a5]">+210%</span>
+                    </div>
+                  </div>
+
+                  {/* Button */}
+                  <FlowButton2 text="View Case Study" />
+                </div>
               </div>
             </div>
 
-            {/* Card 3 */}
-            <div className="group relative bg-gradient-to-br from-white to-neutral-50 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-neutral-200/50 hover:border-[#b300a5]/30">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#b300a5]/5 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            {/* Red Hat Card */}
+            <div className="group relative">
+              {/* Holographic border effect */}
+              <div className="absolute -inset-[1px] bg-gradient-to-r from-[#ee0000] via-[#b300a5] to-[#ee0000] rounded-2xl opacity-0 group-hover:opacity-100 blur-sm transition-all duration-500 animate-gradient bg-[length:200%_auto]" />
               
-              <div className="relative z-10">
-                {/* Circular Progress */}
-                <div className="flex justify-center mb-6">
-                  <div className="relative w-32 h-32">
-                    <svg className="transform -rotate-90 w-32 h-32">
-                      <circle
-                        cx="64"
-                        cy="64"
-                        r="56"
-                        stroke="currentColor"
-                        strokeWidth="8"
-                        fill="none"
-                        className="text-neutral-200"
+              <div className="relative bg-gradient-to-br from-white/90 to-white/50 backdrop-blur-xl rounded-2xl p-8 lg:p-10 border border-white/20 shadow-2xl hover:shadow-[#ee0000]/20 transition-all duration-500 group-hover:scale-[1.02] group-hover:-translate-y-2">
+                {/* Shine effect */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
+                
+                {/* Glow effect on hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#ee0000]/5 via-transparent to-[#b300a5]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
+                
+                <div className="relative z-10 flex flex-col items-center">
+                  {/* Logo Container with animated ring */}
+                  <div className="relative mb-10">
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#ee0000]/20 to-[#ee0000]/5 blur-xl group-hover:blur-2xl transition-all duration-500" />
+                    <div className="relative h-40 w-40 flex items-center justify-center rounded-full bg-gradient-to-br from-white to-neutral-50 shadow-lg group-hover:shadow-xl transition-all duration-500 border border-neutral-100 overflow-hidden">
+                      <Image
+                        src="/img/Redhat.png"
+                        alt="Red Hat Logo"
+                        width={140}
+                        height={140}
+                        className="object-contain p-5 transform group-hover:scale-110 transition-transform duration-500"
                       />
-                      <circle
-                        cx="64"
-                        cy="64"
-                        r="56"
-                        stroke="currentColor"
-                        strokeWidth="8"
-                        fill="none"
-                        strokeDasharray={2 * Math.PI * 56}
-                        strokeDashoffset={2 * Math.PI * 56 * (1 - 0.25)}
-                        className="text-[#b300a5] transition-all duration-1000 ease-out"
-                        strokeLinecap="round"
-                      />
-                    </svg>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="text-4xl font-extrabold text-[#b300a5]">25%</span>
                     </div>
                   </div>
-                </div>
 
-                <h3 className="text-center text-base sm:text-lg font-semibold text-black leading-snug">
-                  Lead to Opportunity<br />Conversion
-                </h3>
+                  {/* Metrics */}
+                  <div className="w-full mb-8 space-y-3">
+                    <div className="flex justify-between items-center p-3 rounded-lg bg-gradient-to-r from-[#ee0000]/5 to-transparent border border-[#ee0000]/10">
+                      <span className="text-xs text-neutral-600 font-medium">Revenue Impact</span>
+                      <span className="text-base font-bold text-[#ee0000]">+198%</span>
+                    </div>
+                    <div className="flex justify-between items-center p-3 rounded-lg bg-gradient-to-r from-[#b300a5]/5 to-transparent border border-[#b300a5]/10">
+                      <span className="text-xs text-neutral-600 font-medium">Engagement Rate</span>
+                      <span className="text-base font-bold text-[#b300a5]">+175%</span>
+                    </div>
+                  </div>
+
+                  {/* Button */}
+                  <FlowButton2 text="View Case Study" />
+                </div>
               </div>
             </div>
+          </div>
+
+          {/* Bottom CTA */}
+          <div className="mt-16 text-center">
+            <p className="text-neutral-600 mb-6 text-base">Ready to write your success story?</p>
+            <FlowButton text="Explore All Case Studies" />
           </div>
         </div>
       </section>
