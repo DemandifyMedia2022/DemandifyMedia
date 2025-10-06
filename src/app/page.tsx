@@ -37,11 +37,11 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main className={`min-h-screen`}>
-      <section className="container mx-auto px-6 mt-12 sm:mt-16 py-16 lg:py-24">
+      <section className="container mx-auto px-6 mt-14 sm:mt-18 py-20 lg:py-28">
         <div className="grid grid-cols-1 lg:grid-cols-2 place-items-center gap-8 sm:gap-10 lg:gap-16">
           {/* Left: Copy */}
           <div className="max-w-xl mx-auto lg:mx-0 text-center lg:text-left">
-            <h1 className="text-3xl sm:text-4xl font-extrabold leading-tight text-black">
+            <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight text-black">
               AI-driven <span className="text-[#b300a5]">INTENT DATA</span>
             </h1>
             <p className="mt-4 text-xl sm:text-2xl text-black">
@@ -61,7 +61,7 @@ export default function Home() {
           </div>
 
           {/* Right: Image with 3D Card */}
-          <CardContainer className="relative aspect-[4/3] w-full max-w-sm sm:max-w-md lg:max-w-lg mx-auto">
+          <CardContainer className="relative aspect-[4/3] w-full max-w-md sm:max-w-lg lg:max-w-xl mx-auto">
             <CardBody className="relative h-full w-full rounded-lg overflow-hidden shadow-xl">
               <CardItem as="div" translateZ={20} className="absolute inset-0">
                 <Image
