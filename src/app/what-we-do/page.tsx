@@ -2,6 +2,7 @@ import { Poppins } from "next/font/google";
 import Image from "next/image";
 import { FlowButton } from "../../../components/ui/flow-button2";
 import LeadGeneration from "../../../components/ui/Lead-Generation";
+import IntentVsABM from "../../../components/ui/intent-vs-abm";
 import { CardContainer, CardBody, CardItem } from "../../../components/ui/3d-card";
 
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "600", "800"] });
@@ -55,6 +56,7 @@ export default function WhatWeDoPage() {
         </div>
       </section>
       <LeadGeneration />
+      <IntentVsABM />
     </main>
   );
 }
