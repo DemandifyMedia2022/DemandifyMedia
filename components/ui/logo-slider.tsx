@@ -55,7 +55,7 @@ export function LogoSlider({
   return (
     <div
       className={cn(
-        "relative w-full overflow-hidden",
+        "relative w-full overflow-hidden py-2 sm:py-3",
         // gradient mask on edges
         "[mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]",
         className
@@ -63,11 +63,12 @@ export function LogoSlider({
     >
       <div
         className={cn(
-          "flex w-max gap-10",
+          // responsive spacing between items
+          "flex w-max gap-6 sm:gap-8 md:gap-10 lg:gap-12",
           "animate-logo-scroll",
           pauseOnHover && "hover:[animation-play-state:paused]"
         )}
-        style={{ animationDuration: `${speedMs}ms` }}
+        style={{ ['--logo-scroll-duration' as any]: `${speedMs}ms` }}
       >
         {track.map((logo, idx) => (
           <div key={`${logo.src}-${idx}`} className={cn("flex items-center justify-center", itemClassName)}>
@@ -76,7 +77,7 @@ export function LogoSlider({
               alt={logo.alt}
               width={logo.width ?? 140}
               height={logo.height ?? 40}
-              className="h-10 w-auto object-contain"
+              className="h-8 sm:h-9 md:h-10 lg:h-12 w-auto object-contain"
             />
           </div>
         ))}
@@ -91,6 +92,15 @@ export function LogoSlider({
           animation-name: logo-scroll;
           animation-timing-function: linear;
           animation-iteration-count: infinite;
+          animation-duration: var(--logo-scroll-duration, 20000ms);
+        }
+        /* Slightly slower on very small screens for legibility */
+        @media (max-width: 640px) {
+          .animate-logo-scroll { animation-duration: calc(var(--logo-scroll-duration, 20000ms) * 1.1); }
+        }
+        /* Slightly faster on large screens so it doesn't feel too slow */
+        @media (min-width: 1024px) {
+          .animate-logo-scroll { animation-duration: calc(var(--logo-scroll-duration, 20000ms) * 0.9); }
         }
         @media (prefers-reduced-motion: reduce) {
           .animate-logo-scroll { animation-duration: 0.001ms; animation-iteration-count: 1; }

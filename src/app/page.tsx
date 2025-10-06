@@ -1,7 +1,5 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
-import { Poppins } from 'next/font/google'
-const poppins = Poppins({ subsets: ['latin'], weight: ['400','600','800'] })
 import { FlowButton } from '../../components/ui/flow-button'
 import { FlowButton as FlowButton2 } from '../../components/ui/flow-button2'
 import { CardContainer, CardBody, CardItem } from '../../components/ui/3d-card'
@@ -9,6 +7,12 @@ import { SlidingNumber } from '../../components/ui/Sliding-Numbers'
 import { CircularProgress } from '../../components/ui/circular-progress'
 import { GlowCard } from '../../components/ui/spotlight-card'
 import { LogoSlider } from '../../components/ui/logo-slider'
+import { ContactCard } from '../../components/ui/contact-card'
+import { Button } from '../../components/ui/ui/button'
+import { Input } from '../../components/ui/ui/input'
+import { Label } from '../../components/ui/ui/label'
+import { Textarea } from '../../components/ui/ui/textarea'
+import { Mail, Phone, MapPin } from 'lucide-react'
 import { InfiniteMovingCards } from '../../components/ui/infinite-moving-cards'
 
 export const metadata: Metadata = {
@@ -32,7 +36,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main className={`min-h-screen ${poppins.className}`}>
+    <main className={`min-h-screen`}>
       <section className="container mx-auto px-6 mt-12 sm:mt-16 py-16 lg:py-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 place-items-center gap-8 sm:gap-10 lg:gap-16">
           {/* Left: Copy */}
@@ -576,6 +580,110 @@ export default function Home() {
               },
             ]}
           />
+        </div>
+      </section>
+      {/* Global Impact Section */}
+<section className="relative container mx-auto px-6 pt-20 pb-24 lg:pt-24 lg:pb-32 overflow-hidden">
+  {/* Background Grid */}
+  <div className="absolute inset-0 opacity-[0.03] pointer-events-none select-none">
+    <div
+      className="absolute inset-0"
+      style={{
+        backgroundImage:
+          "linear-gradient(#b300a5 1px, transparent 1px), linear-gradient(90deg, #b300a5 1px, transparent 1px)",
+        backgroundSize: "60px 60px",
+      }}
+    />
+  </div>
+
+  {/* Gradient Blurs */}
+  <div className="absolute top-0 left-1/3 w-[500px] h-[500px] bg-[#b300a5]/10 rounded-full blur-3xl animate-pulse" />
+  <div
+    className="absolute bottom-0 right-1/3 w-[500px] h-[500px] bg-[#d946ef]/10 rounded-full blur-3xl animate-pulse"
+    style={{ animationDelay: "1s" }}
+  />
+
+  <div className="relative max-w-7xl mx-auto text-center">
+    {/* Heading */}
+    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-[#b300a5] to-[#d946ef] mb-4">
+      Turning Numbers Into Opportunities
+    </h2>
+    <p className="text-neutral-600 text-sm sm:text-base max-w-2xl mx-auto mb-14">
+      Our data-driven impact across global markets, helping brands unlock measurable growth and performance.
+    </p>
+
+    {/* Stats Grid */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-2 sm:px-6 lg:px-12">
+      {[
+        { value: 62, suffix: "M+", label: "North America" },
+        { value: 41, suffix: "M+", label: "APAC" },
+        { value: 40, suffix: "M+", label: "EMEA" },
+        { value: 143, suffix: "M+", label: "Global Data Base" },
+        { value: 87, suffix: "+", label: "Clients & Counting" },
+        { value: 260, suffix: "k+", label: "Leads Delivered Annually" },
+      ].map((stat, i) => (
+        <div
+          key={i}
+          className="relative group bg-white border-2 border-[#ec6fea] rounded-xl p-6 shadow-[0_0_20px_rgba(0,0,0,0.06)] hover:shadow-[0_0_25px_rgba(0,0,0,0.12)] transition-all duration-500 hover:-translate-y-1 flex flex-col items-center justify-center text-center"
+        >
+          
+          <div className="relative z-10 text-center">
+            <div className="text-3xl sm:text-4xl font-semibold text-[#b300a5] mb-2 text-center">
+              <SlidingNumber
+                value={stat.value}
+                suffix={stat.suffix}
+                animateOnScroll
+                className="text-3xl sm:text-4xl font-semibold text-[#b300a5]"
+              />
+            </div>
+            <p className="text-xs sm:text-sm font-normal text-neutral-700 text-center">{stat.label}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+      {/* Contact Section (Last) */}
+      <section className="relative container mx-auto px-6 pt-12 pb-20 lg:pt-16 lg:pb-28">
+        <div className="max-w-6xl mx-auto">
+          <ContactCard
+            title="Contact Us"
+            description="Have questions or want to collaborate? Send us a message and our team will get back within 1 business day."
+            contactInfo={[
+              { icon: Mail, label: 'Email', value: 'contact@demandifymedia.com' },
+              { icon: Phone, label: 'Phone', value: '+1 (000) 000-0000' },
+              { icon: MapPin, label: 'Address', value: 'San Francisco, CA' },
+            ]}
+          >
+            <form className="w-full space-y-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <Label htmlFor="firstName">First Name</Label>
+                  <Input id="firstName" name="firstName" placeholder="First" />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="lastName">Last Name</Label>
+                  <Input id="lastName" name="lastName" placeholder="Last" />
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="email">Email</Label>
+                <Input id="email" name="email" type="email" placeholder="you@company.com" />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="message">Comment or Message</Label>
+                <Textarea id="message" name="message" placeholder="How can we help?" rows={5} />
+              </div>
+
+              <div className="pt-2">
+                <Button type="submit" className="bg-[#ec6fea] hover:bg-[#d46bf4] text-white">
+                  Submit
+                </Button>
+              </div>
+            </form>
+          </ContactCard>
         </div>
       </section>
     </main>
