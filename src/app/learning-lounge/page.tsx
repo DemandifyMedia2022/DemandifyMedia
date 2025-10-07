@@ -11,6 +11,15 @@ export const metadata = {
 };
 
 export default function LearningLoungePage() {
+  const videos = [
+    { src: "/img/Vdo1.png", title: "Scaling B2B Demand Gen", href: "https://www.youtube.com/watch?v=w5I-Hhkyo0I&feature=youtu.be" },
+    { src: "/img/vdo 2.webp", title: "Content That Converts", href: "https://www.youtube.com/watch?v=a20FFRyywT8&t=56s" },
+    { src: "/img/vdo3.png", title: "SEO in 2025", href: "https://www.youtube.com/watch?v=iArGidm9EFY" },
+    { src: "/img/vdo4.webp", title: "ABM Tactics", href: "https://www.youtube.com/watch?v=m9o1Ki9Nol4" },
+    { src: "/img/vdo5.webp", title: "Paid Media Playbook", href: "https://www.youtube.com/watch?v=iTqVK9e_m_g" },
+  ];
+  // Add minimal placeholders to keep the grid balanced on desktop (3 columns)
+  const placeholdersCount = (3 - (videos.length % 3)) % 3;
   return (
     <main className={`min-h-screen pt-28 md:pt-32 ${poppins.className}`}>
       {/* Hero */}
@@ -216,18 +225,54 @@ export default function LearningLoungePage() {
           />
         </div>
         <div className="relative max-w-5xl mx-auto text-center">
-          <h3 className="text-3xl sm:text-4xl font-extrabold leading-tight text-black">Watch Our Latest Video Interviews</h3>
+          <h3 className="text-3xl sm:text-4xl font-semibold leading-tight text-black">Watch Our Latest Video Interviews</h3>
           <p className="text-sm text-neutral-700 mt-1">Masterclass By Marketers</p>
-          <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-5">
-            {["/img/Kaseya.png", "/img/Kapersky.png", "/img/Redhat.png"].map((src, i) => (
-              <div key={i} className="rounded-2xl border border-neutral-200 bg-white shadow-sm overflow-hidden">
-                <div className="relative w-full aspect-[16/10]">
-                  <Image src={src} alt="Interview thumbnail" fill className="object-contain p-6" />
+          <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 text-left">
+            {videos.map((v, i) => (
+              v.href ? (
+                <a
+                  key={i}
+                  href={v.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block rounded-2xl overflow-hidden border border-neutral-200 bg-white shadow-sm hover:shadow-md transition"
+                >
+                  <div className="relative w-full aspect-[16/10] bg-neutral-100">
+                    <Image src={v.src} alt={v.title} fill className="object-contain p-4" />
+                  </div>
+                  <div className="px-3 py-3">
+                    <p className="text-sm font-semibold text-neutral-900">{v.title}</p>
+                  </div>
+                </a>
+              ) : (
+                <div
+                  key={i}
+                  className="rounded-2xl overflow-hidden border border-neutral-200 bg-white shadow-sm"
+                >
+                  <div className="relative w-full aspect-[16/10] bg-neutral-100">
+                    <Image src={v.src} alt={v.title} fill className="object-contain p-4" />
+                  </div>
+                  <div className="px-3 py-3">
+                    <p className="text-sm font-semibold text-neutral-900">{v.title}</p>
+                  </div>
                 </div>
-                <div className="px-4 pb-4 -mt-1">
-                  <button className="inline-flex items-center rounded-full bg-[#b300a5] px-4 py-2 text-white text-xs font-semibold shadow hover:bg-[#99038d] transition-colors">
-                    Watch
-                  </button>
+              )
+            ))}
+            {Array.from({ length: placeholdersCount }).map((_, idx) => (
+              <div
+                key={`ph-${idx}`}
+                className="rounded-2xl overflow-hidden border border-dashed border-neutral-300 bg-white/60 backdrop-blur-sm shadow-sm flex flex-col"
+              >
+                <div className="relative w-full aspect-[16/10] bg-neutral-50 grid place-items-center">
+                  <div className="flex items-center gap-2 text-neutral-400">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M19 3H5a2 2 0 0 0-2 2v14l4-4h12a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z" />
+                    </svg>
+                    <span className="text-sm font-medium">More interviews coming soon</span>
+                  </div>
+                </div>
+                <div className="px-3 py-3">
+                  <p className="text-sm font-semibold text-neutral-400">Coming Soon</p>
                 </div>
               </div>
             ))}
