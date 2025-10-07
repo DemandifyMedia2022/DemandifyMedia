@@ -73,7 +73,7 @@ const Feature = () => {
   }, [openIndex]);
 
   return (
-    <Section className="border-b py-16 lg:py-24">
+    <Section className="border-b py-16 lg:pb-12 lg:pt-20">
       <Container className="not-prose">
         <div className="flex flex-col">
           <div className="text-center mb-8 lg:mb-10">
@@ -191,12 +191,19 @@ const Feature = () => {
             )}
           </AnimatePresence>
 
-          <div className="mt-6 grid grid-cols-1 gap-4 sm:gap-5 lg:gap-6 md:mt-12 md:grid-cols-2 lg:grid-cols-4 auto-rows-fr">
+          <div className="mt-6 grid grid-cols-1 gap-3 sm:gap-4 lg:gap-5 md:mt-12 md:grid-cols-2 lg:grid-cols-4 auto-rows-fr">
             {featureText.map(({ icon, title, description, href, cta }, index) => (
-              <button
-                type="button"
+              <div
+                role="button"
+                tabIndex={0}
                 onClick={() => setOpenIndex(index)}
-                className="group relative flex h-full flex-col gap-3 sm:gap-4 rounded-2xl border border-neutral-200/80 bg-white/90 p-4 sm:p-5 md:p-6 text-left shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-[#b300a5]/40 backdrop-blur-sm"
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    setOpenIndex(index);
+                  }
+                }}
+                className="group relative flex h-full flex-col gap-3 sm:gap-4 rounded-2xl border border-neutral-200/80 bg-white/90 p-6 sm:p-7 md:p-8 text-left shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-[#b300a5]/40 backdrop-blur-sm min-h-[220px]"
                 key={index}
               >
                 {/* Glow border on hover */}
@@ -204,7 +211,7 @@ const Feature = () => {
 
                 <div className="relative grid gap-2.5 sm:gap-3 flex-1">
                   <div className="flex items-center gap-3">
-                    <div className="flex h-9 w-9 sm:h-10 sm:w-10 md:h-11 md:w-11 items-center justify-center rounded-full bg-[#b300a5]/10 text-[#b300a5]">
+                    <div className="flex h-11 w-11 sm:h-12 sm:w-12 md:h-14 md:w-14 items-center justify-center rounded-full bg-[#b300a5]/10 text-[#b300a5]">
                       {icon}
                     </div>
                   </div>
@@ -218,15 +225,17 @@ const Feature = () => {
                 {cta && (
                   <div className="relative mt-2 sm:mt-3">
                     {href ? (
-                      <Link href={`${href}`} className="w-fit">
-                        <FlowButton text={cta} size="sm" />
+                      <Link href={`${href}`} className="w-fit" onClick={(e) => e.stopPropagation()}>
+                        <FlowButton text={cta} size="sm" as="span" />
                       </Link>
                     ) : (
-                      <FlowButton text={cta} size="sm" />
+                      <div onClick={(e) => e.stopPropagation()} className="w-fit">
+                        <FlowButton text={cta} size="sm" as="span" />
+                      </div>
                     )}
                   </div>
                 )}
-              </button>
+              </div>
             ))}
           </div>
         </div>

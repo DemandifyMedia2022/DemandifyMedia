@@ -4,6 +4,7 @@ import { FlowButton } from "../../../components/ui/flow-button2";
 import LeadGeneration from "../../../components/ui/Lead-Generation";
 import IntentVsABM from "../../../components/ui/intent-vs-abm";
 import { CardContainer, CardBody, CardItem } from "../../../components/ui/3d-card";
+import ServicesOverview from "../../../components/ui/services-overview";
 
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "600", "800"] });
 
@@ -11,7 +12,7 @@ export default function WhatWeDoPage() {
   return (
     <main className={`min-h-screen ${poppins.className}`}>
       {/* Hero Section with image */}
-      <section className="container mx-auto px-6 mt-14 sm:mt-18 py-20 lg:py-28">
+      <section className="container mx-auto px-6 mt-14 sm:mt-18 pb-16 lg:pb-20 pt-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 place-items-center gap-8 sm:gap-10 lg:gap-16">
           {/* Left: Copy */}
           <div className="max-w-xl mx-auto lg:mx-0 text-center lg:text-left">
@@ -57,6 +58,7 @@ export default function WhatWeDoPage() {
       </section>
       <LeadGeneration />
       <IntentVsABM />
+      <ServicesOverview />
     </main>
   );
 }

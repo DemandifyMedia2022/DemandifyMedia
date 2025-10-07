@@ -3,7 +3,7 @@ import { ArrowRight } from 'lucide-react';
 
 type FlowButtonSize = 'sm' | 'md' | 'lg';
 
-export function FlowButton({ text = "Modern Button", size = 'md' }: { text?: string; size?: FlowButtonSize }) {
+export function FlowButton({ text = "Modern Button", size = 'md', as = 'button' }: { text?: string; size?: FlowButtonSize; as?: 'button' | 'span' | 'div' }) {
   const sizeClasses = {
     sm: {
       container: 'px-5 py-2 text-xs',
@@ -25,8 +25,10 @@ export function FlowButton({ text = "Modern Button", size = 'md' }: { text?: str
     },
   }[size];
 
+  const Component = as;
+
   return (
-    <button className={`group relative flex items-center gap-1 overflow-hidden rounded-[100px] border-[1.5px] border-[#333333]/40 bg-[#d734cc] ${sizeClasses.container} font-semibold text-white cursor-pointer transition-all duration-[600ms] ease-[cubic-bezier(0.23,1,0.32,1)] hover:bg-white hover:text-[#c93bd2] hover:rounded-[12px] active:scale-[0.95]`}>
+    <Component className={`group relative flex items-center gap-1 overflow-hidden rounded-[100px] border-[1.5px] border-[#333333]/40 bg-[#d734cc] ${sizeClasses.container} font-semibold text-white cursor-pointer transition-all duration-[600ms] ease-[cubic-bezier(0.23,1,0.32,1)] hover:bg-white hover:text-[#c93bd2] hover:rounded-[12px] active:scale-[0.95]`}>
       {/* Left arrow (arr-2) */}
       <ArrowRight 
         className={`absolute ${sizeClasses.leftArrow} stroke-white fill-none z-[9] group-hover:stroke-[#c93bd2] transition-all duration-[800ms] ease-[cubic-bezier(0.34,1.56,0.64,1)]`} 
@@ -41,6 +43,6 @@ export function FlowButton({ text = "Modern Button", size = 'md' }: { text?: str
       <ArrowRight 
         className={`absolute ${sizeClasses.rightArrow} stroke-white fill-none z-[9] group-hover:right-[-25%] group-hover:stroke-[#c93bd2] transition-all duration-[800ms] ease-[cubic-bezier(0.34,1.56,0.64,1)]`} 
       />
-    </button>
+    </Component>
   );
 }
