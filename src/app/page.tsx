@@ -41,7 +41,7 @@ export default function Home() {
         <div className="grid grid-cols-1 lg:grid-cols-2 place-items-center gap-8 sm:gap-10 lg:gap-16">
           {/* Left: Copy */}
           <div className="max-w-xl mx-auto lg:mx-0 text-center lg:text-left">
-            <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight text-black">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-black">
               AI-driven <span className="text-[#b300a5]">INTENT DATA</span>
             </h1>
             <p className="mt-4 text-xl sm:text-2xl text-black">
@@ -61,7 +61,7 @@ export default function Home() {
           </div>
 
           {/* Right: Image with 3D Card */}
-          <CardContainer className="relative aspect-[4/3] w-full max-w-md sm:max-w-lg lg:max-w-xl mx-auto">
+          <CardContainer className="relative aspect-[4/3] w-full max-w-xs sm:max-w-sm lg:max-w-md mx-auto">
             <CardBody className="relative h-full w-full rounded-lg overflow-hidden shadow-xl">
               <CardItem as="div" translateZ={20} className="absolute inset-0">
                 <Image
@@ -98,7 +98,7 @@ export default function Home() {
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-[#c11bbb]/10 border border-[#c11bbb]/20 text-[#c11bbb] text-xs font-semibold tracking-wider uppercase">
               Trusted by the world’s best
             </div>
-            <h3 className="mt-4 text-2xl sm:text-3xl font-extrabold text-black">
+            <h3 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-black">
               Global brands partner with Demandify
             </h3>
           </div>
@@ -140,7 +140,7 @@ export default function Home() {
 
           {/* Right: Content */}
           <div className="max-w-xl mx-auto lg:mx-0 text-center lg:text-left">
-            <h2 className="text-3xl sm:text-4xl font-extrabold leading-tight text-black">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-black">
               Forge unbreakable connections with your{' '}
               <span className="text-[#b300a5]">target audience</span>
             </h2>
@@ -153,7 +153,7 @@ export default function Home() {
             {/* Stats Grid */}
             <div className="mt-8 grid grid-cols-3 gap-8 sm:gap-12 lg:gap-16">
               {/* Stat 1 */}
-              <div className="text-center lg:text-left">
+              <div className="text-center flex flex-col items-center">
                 <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#b300a5]">
                   <SlidingNumber value={42} className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#b300a5]" suffix="M+" animateOnScroll />
                 </div>
@@ -163,7 +163,7 @@ export default function Home() {
               </div>
 
               {/* Stat 2 */}
-              <div className="text-center lg:text-left">
+              <div className="text-center flex flex-col items-center">
                 <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#b300a5]">
                   <SlidingNumber value={14} className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#b300a5]" suffix="+" animateOnScroll />
                 </div>
@@ -173,7 +173,7 @@ export default function Home() {
               </div>
 
               {/* Stat 3 */}
-              <div className="text-center lg:text-left">
+              <div className="text-center flex flex-col items-center">
                 <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#b300a5]">
                   <SlidingNumber value={4} className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#b300a5]" suffix="+" animateOnScroll />
                 </div>
@@ -187,12 +187,18 @@ export default function Home() {
       </section>
 
       {/* Revenue Success Section */}
-      <section className="container mx-auto px-6 py-16 lg:py-24">
-        <div className="max-w-6xl mx-auto">
+      <section className="relative container mx-auto px-6 py-16 lg:py-24">
+        <div className="relative max-w-6xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-12 lg:mb-16">
-            <h2 className="text-3xl sm:text-4xl font-extrabold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-[#b300a5] to-[#d946ef]">
-              Speed your way to revenue success
+          <div className="relative group text-center mb-12 lg:mb-16">
+            <div className="pointer-events-none absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-[70%] max-w-3xl h-24 bg-[#c11bbb]/15 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="inline-block mb-3">
+              <span className="px-4 py-1.5 rounded-full bg-[#b300a5]/10 border border-[#b300a5]/20 text-[#b300a5] text-xs font-semibold tracking-wider uppercase">Revenue</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#b300a5] to-[#d946ef]">Speed your way</span>
+              <br />
+              <span className="text-black">to revenue success</span>
             </h2>
             <p className="mt-4 text-sm sm:text-base text-neutral-600 max-w-3xl mx-auto">
               Maximize revenues by optimizing processes and strategies, including aligning every aspect of your
@@ -219,29 +225,18 @@ export default function Home() {
       </section>
  
      {/* Case Studies Section - Futuristic Redesign */}
-      <section className="relative container mx-auto px-6 pt-12 pb-20 lg:pt-16 lg:pb-28 overflow-hidden">
-        {/* Animated Background Grid */}
-        <div className="absolute inset-0 opacity-[0.03]">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `linear-gradient(#b300a5 1px, transparent 1px), linear-gradient(90deg, #b300a5 1px, transparent 1px)`,
-            backgroundSize: '50px 50px'
-          }} />
-        </div>
-
-        {/* Gradient Orbs */}
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#b300a5]/10 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#d946ef]/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
-
+      <section className="relative container mx-auto px-6 pt-12 pb-20 lg:pt-16 lg:pb-28">
         <div className="relative max-w-7xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-12 lg:mb-16">
+          <div className="relative group text-center mb-12 lg:mb-16">
+            <div className="pointer-events-none absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-[70%] max-w-3xl h-20 bg-[#c11bbb]/15 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             <div className="inline-block mb-4">
               <span className="px-4 py-2 rounded-full bg-gradient-to-r from-[#b300a5]/10 to-[#d946ef]/10 border border-[#b300a5]/20 text-[#b300a5] text-xs font-semibold tracking-wider uppercase backdrop-blur-sm">
                 Success Stories
               </span>
             </div>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#b300a5] via-[#d946ef] to-[#b300a5] animate-gradient bg-[length:200%_auto]">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-6">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#b300a5] via-[#d946ef] to-[#b300a5]">
                 Case Studies
               </span>
               <br />
@@ -259,7 +254,7 @@ export default function Home() {
               {/* Holographic border effect */}
               <div className="absolute -inset-[1px] bg-gradient-to-r from-[#b300a5] via-[#d946ef] to-[#b300a5] rounded-2xl opacity-0 group-hover:opacity-100 blur-sm transition-all duration-500 animate-gradient bg-[length:200%_auto]" />
               
-              <div className="relative bg-gradient-to-br from-white/90 to-white/50 backdrop-blur-xl rounded-2xl p-8 lg:p-10 border border-white/20 shadow-2xl hover:shadow-[#b300a5]/20 transition-all duration-500 group-hover:scale-[1.02] group-hover:-translate-y-2">
+              <div className="relative bg-gradient-to-br from-white/90 to-white/50 backdrop-blur-xl rounded-2xl p-8 lg:p-10 border border-white/20 group-hover:border-[#ca28c4] shadow-2xl hover:shadow-[#b300a5]/20 transition-all duration-500 group-hover:scale-[1.02] group-hover:-translate-y-2">
                 {/* Shine effect */}
                 <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
                 
@@ -304,7 +299,7 @@ export default function Home() {
               {/* Holographic border effect */}
               <div className="absolute -inset-[1px] bg-gradient-to-r from-[#00a88e] via-[#b300a5] to-[#00a88e] rounded-2xl opacity-0 group-hover:opacity-100 blur-sm transition-all duration-500 animate-gradient bg-[length:200%_auto]" />
               
-              <div className="relative bg-gradient-to-br from-white/90 to-white/50 backdrop-blur-xl rounded-2xl p-8 lg:p-10 border border-white/20 shadow-2xl hover:shadow-[#00a88e]/20 transition-all duration-500 group-hover:scale-[1.02] group-hover:-translate-y-2">
+              <div className="relative bg-gradient-to-br from-white/90 to-white/50 backdrop-blur-xl rounded-2xl p-8 lg:p-10 border border-white/20 group-hover:border-[#ca28c4] shadow-2xl hover:shadow-[#00a88e]/20 transition-all duration-500 group-hover:scale-[1.02] group-hover:-translate-y-2">
                 {/* Shine effect */}
                 <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
                 
@@ -349,7 +344,7 @@ export default function Home() {
               {/* Holographic border effect */}
               <div className="absolute -inset-[1px] bg-gradient-to-r from-[#ee0000] via-[#b300a5] to-[#ee0000] rounded-2xl opacity-0 group-hover:opacity-100 blur-sm transition-all duration-500 animate-gradient bg-[length:200%_auto]" />
               
-              <div className="relative bg-gradient-to-br from-white/90 to-white/50 backdrop-blur-xl rounded-2xl p-8 lg:p-10 border border-white/20 shadow-2xl hover:shadow-[#ee0000]/20 transition-all duration-500 group-hover:scale-[1.02] group-hover:-translate-y-2">
+              <div className="relative bg-gradient-to-br from-white/90 to-white/50 backdrop-blur-xl rounded-2xl p-8 lg:p-10 border border-white/20 group-hover:border-[#ca28c4] shadow-2xl hover:shadow-[#ee0000]/20 transition-all duration-500 group-hover:scale-[1.02] group-hover:-translate-y-2">
                 {/* Shine effect */}
                 <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
                 
@@ -401,29 +396,18 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="relative container mx-auto px-6 py-20 lg:py-32 overflow-hidden">
-        {/* Animated Background Grid */}
-        <div className="absolute inset-0 opacity-[0.03]">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `linear-gradient(#c11bbb 1px, transparent 1px), linear-gradient(90deg, #c11bbb 1px, transparent 1px)`,
-            backgroundSize: '50px 50px'
-          }} />
-        </div>
-
-        {/* Gradient Orbs */}
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#c11bbb]/10 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#c11bbb]/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
-
+      <section className="relative container mx-auto px-6 py-20 lg:py-32">
         <div className="relative max-w-7xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-16 lg:mb-24">
+          <div className="relative group text-center mb-16 lg:mb-24">
+            <div className="pointer-events-none absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-[70%] max-w-3xl h-20 bg-[#c11bbb]/15 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             <div className="inline-block mb-4">
               <span className="px-4 py-2 rounded-full bg-gradient-to-r from-[#c11bbb]/10 to-[#c11bbb]/10 border border-[#c11bbb]/20 text-[#c11bbb] text-xs font-semibold tracking-wider uppercase backdrop-blur-sm">
                 Features
               </span>
             </div>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c11bbb] via-[#c11bbb] to-[#c11bbb] animate-gradient bg-[length:200%_auto]">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-6">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c11bbb] via-[#c11bbb] to-[#c11bbb]">
                 Powerful Features
               </span>
               <br />
@@ -526,23 +510,15 @@ export default function Home() {
       </section>
       
       {/* Testimonials Section - Moving Cards (placed below Features) */}
-      <section className="relative container mx-auto px-6 pt-12 pb-20 lg:pt-16 lg:pb-28 overflow-hidden">
-        {/* Subtle grid background */}
-        <div className="absolute inset-0 opacity-[0.03] pointer-events-none select-none">
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage:
-                "linear-gradient(#c11bbb 1px, transparent 1px), linear-gradient(90deg, #c11bbb 1px, transparent 1px)",
-              backgroundSize: "50px 50px",
-            }}
-          />
-        </div>
-
+      <section className="relative container mx-auto px-6 pt-12 pb-20 lg:pt-16 lg:pb-28">
         <div className="relative max-w-7xl mx-auto">
           {/* Heading */}
-          <div className="text-center mb-10 lg:mb-14">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight text-black">
+          <div className="relative group text-center mb-10 lg:mb-14">
+            <div className="pointer-events-none absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-[70%] max-w-3xl h-20 bg-[#c11bbb]/15 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="inline-block mb-3">
+              <span className="px-4 py-1.5 rounded-full bg-[#c11bbb]/10 border border-[#c11bbb]/20 text-[#c11bbb] text-xs font-semibold tracking-wider uppercase">Testimonials</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-black">
               Fueling Success,
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#c11bbb] to-[#d633cd]">
                 LOVED by Customers
@@ -583,30 +559,18 @@ export default function Home() {
         </div>
       </section>
       {/* Global Impact Section */}
-<section className="relative container mx-auto px-6 pt-20 pb-24 lg:pt-24 lg:pb-32 overflow-hidden">
-  {/* Background Grid */}
-  <div className="absolute inset-0 opacity-[0.03] pointer-events-none select-none">
-    <div
-      className="absolute inset-0"
-      style={{
-        backgroundImage:
-          "linear-gradient(#b300a5 1px, transparent 1px), linear-gradient(90deg, #b300a5 1px, transparent 1px)",
-        backgroundSize: "60px 60px",
-      }}
-    />
-  </div>
-
-  {/* Gradient Blurs */}
-  <div className="absolute top-0 left-1/3 w-[500px] h-[500px] bg-[#b300a5]/10 rounded-full blur-3xl animate-pulse" />
-  <div
-    className="absolute bottom-0 right-1/3 w-[500px] h-[500px] bg-[#d946ef]/10 rounded-full blur-3xl animate-pulse"
-    style={{ animationDelay: "1s" }}
-  />
-
+<section className="relative container mx-auto px-6 pt-20 pb-24 lg:pt-24 lg:pb-32">
   <div className="relative max-w-7xl mx-auto text-center">
     {/* Heading */}
-    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-[#b300a5] to-[#d946ef] mb-4">
-      Turning Numbers Into Opportunities
+    <div className="relative group inline-block mb-3">
+      <div className="pointer-events-none absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-[130%] max-w-4xl h-16 bg-[#c11bbb]/15 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <span className="px-4 py-1.5 rounded-full bg-[#b300a5]/10 border border-[#b300a5]/20 text-[#b300a5] text-xs font-semibold tracking-wider uppercase">Global Impact</span>
+    </div>
+    <h2 className="relative group text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-2">
+      <span className="pointer-events-none absolute left-1/2 -z-10 -translate-x-1/2 top-1/2 -translate-y-1/2 w-[70%] max-w-3xl h-16 bg-[#c11bbb]/15 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#b300a5] to-[#d946ef]">Turning Numbers</span>
+      <br />
+      <span className="text-black">Into Opportunities</span>
     </h2>
     <p className="text-neutral-600 text-sm sm:text-base max-w-2xl mx-auto mb-14">
       Our data-driven impact across global markets, helping brands unlock measurable growth and performance.
