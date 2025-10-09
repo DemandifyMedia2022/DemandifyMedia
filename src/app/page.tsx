@@ -209,15 +209,15 @@ export default function Home() {
           {/* Stats Cards Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
             <CircularProgress 
-              percentage={99} 
+              percentage={83} 
               label="Data Accuracy Globally with Access to Direct lines" 
             />
             <CircularProgress 
-              percentage={15} 
+              percentage={75} 
               label="Content Consumption & Interaction Through Multi-Touch points" 
             />
             <CircularProgress 
-              percentage={25} 
+              percentage={34} 
               label="Lead to Opportunity Conversion" 
             />
           </div>
@@ -585,10 +585,11 @@ export default function Home() {
         { value: 143, suffix: "M+", label: "Global Data Base" },
         { value: 87, suffix: "+", label: "Clients & Counting" },
         { value: 260, suffix: "k+", label: "Leads Delivered Annually" },
+        { value: 260, suffix: "M+", label: "India" },
       ].map((stat, i) => (
         <div
           key={i}
-          className="relative group bg-white border-2 border-[#ec6fea] rounded-xl p-6 shadow-[0_0_20px_rgba(0,0,0,0.06)] hover:shadow-[0_0_25px_rgba(0,0,0,0.12)] transition-all duration-500 hover:-translate-y-1 flex flex-col items-center justify-center text-center"
+          className={`relative group bg-white border-2 border-[#ec6fea] rounded-xl p-6 shadow-[0_0_20px_rgba(0,0,0,0.06)] hover:shadow-[0_0_25px_rgba(0,0,0,0.12)] transition-all duration-500 hover:-translate-y-1 flex flex-col items-center justify-center text-center${stat.label === 'India' ? ' lg:col-start-2' : ''}`}
         >
           
           <div className="relative z-10 text-center">

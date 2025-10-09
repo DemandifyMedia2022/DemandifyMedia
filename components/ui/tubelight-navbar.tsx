@@ -7,7 +7,7 @@ import Image from "next/image"
 import { LucideIcon } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { usePathname } from "next/navigation"
-import { FlowButton } from "./flow-button"
+import { FlowButton as FlowCTA } from "./flow-button2"
 import { Poppins } from "next/font/google"
 
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "600"] })
@@ -26,6 +26,11 @@ interface NavBarProps {
 export function NavBar({ items, className }: NavBarProps) {
   const [isMobile, setIsMobile] = useState(false)
   const pathname = usePathname()
+
+  // Hide the navbar entirely on Studio routes
+  if (pathname && pathname.startsWith("/studio")) {
+    return null
+  }
 
   useEffect(() => {
     const handleResize = () => {
@@ -85,9 +90,11 @@ export function NavBar({ items, className }: NavBarProps) {
           })}
         </div>
 
-        {/* Contact Button */}
+        {/* Contact Button (navigates to /contact-us) */}
         <div className="ml-6 hidden md:block">
-          <FlowButton text="Contact" />
+          <Link href="/contact-us" aria-label="Contact">
+            <FlowCTA text="Contact" as="span" size="md" />
+          </Link>
         </div>
 
         {/* Mobile menu placeholder */}

@@ -26,7 +26,7 @@ export default function PricingPage() {
           <div className="group relative h-full rounded-3xl border-2 border-[#b300a5]/60 bg-white shadow-md hover:shadow-2xl transition-all duration-300">
             <div className="absolute inset-0 rounded-3xl ring-2 ring-[#b300a5]/20 pointer-events-none" />
             <div className="relative h-full rounded-3xl overflow-hidden flex flex-col">
-              <div className="px-5 md:px-6 pt-5 md:pt-6 pb-3 text-center bg-gradient-to-b from-[#ffe7fb] via-white to-white min-h-[110px] md:min-h-[130px] flex flex-col justify-center">
+              <div className="px-6 md:px-8 pt-6 md:pt-8 pb-4 text-center bg-gradient-to-b from-[#ffe7fb] via-white to-white min-h-[120px] md:min-h-[140px] flex flex-col justify-center">
                 <h3 className="text-xl sm:text-2xl font-semibold text-[#6b21a8]">
                   Brand Awareness & Intent Qualified Leads
                 </h3>
@@ -36,13 +36,13 @@ export default function PricingPage() {
                 </div>
               </div>
               <div className="h-px w-full bg-neutral-300" />
-              <div className="px-6 md:px-8 py-5 md:py-6 flex flex-col flex-1 min-h-[14rem] md:min-h-[16rem]">
+              <div className="px-6 md:px-8 py-6 md:py-8 flex flex-col flex-1 min-h-[16rem] md:min-h-[18rem]">
                 <ul className="space-y-4 text-base text-neutral-800">
                   <li className="flex gap-2"><span>▸</span>Hosting your Banner on demandify's tech bulletin and partner media agency.</li>
                   <li className="flex gap-2"><span>▸</span>LinkedIn Ads & Announcements</li>
                   <li className="flex gap-2"><span>▸</span>EDM Campaigns promoting the content on your website</li>
                 </ul>
-                <div className="mt-auto pt-5 md:pt-6 flex justify-center">
+                <div className="mt-auto pt-6 md:pt-8 flex justify-center">
                   <FlowCta text="Learn More" />
                 </div>
               </div>
