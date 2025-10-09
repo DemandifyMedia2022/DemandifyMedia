@@ -54,6 +54,7 @@ export default function RootLayout({
     { name: "What we do", url: "/what-we-do" },
     { name: "Library", url: "/library" },
     { name: "Pricing", url: "/pricing" },
+    { name: "Careers", url: "/careers" },
   ];
   return (
     <html lang="en">
