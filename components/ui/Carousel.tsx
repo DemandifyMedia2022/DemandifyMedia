@@ -77,11 +77,11 @@ export default function Carousel({ slides, interval = 3000 }: CarouselProps) {
             style={{ transformOrigin: "center center" }}
           >
             <div className="w-[65vw] sm:w-[45vw] md:w-[28vw] max-w-[380px] cursor-pointer">
-              <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden shadow-xl bg-neutral-200 border border-neutral-300">
+              <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden shadow-xl bg-white ring-1 ring-black/5 grid place-items-center p-2">
                 <img
                   src={s.src}
                   alt={s.title}
-                  className="absolute inset-0 w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                   loading="lazy"
                 />
               </div>

@@ -10,6 +10,12 @@ export default defineType({
     defineField({ name: 'excerpt', type: 'text' }),
     defineField({ name: 'coverImage', title: 'Cover Image', type: 'image', options: { hotspot: true } }),
     defineField({ name: 'author', type: 'reference', to: [{ type: 'author' }] }),
+    defineField({
+      name: 'tags',
+      title: 'Tags',
+      type: 'array',
+      of: [{ type: 'reference', to: [{ type: 'tag' }] }],
+    }),
     defineField({ name: 'publishedAt', type: 'datetime' }),
     defineField({
       name: 'body',

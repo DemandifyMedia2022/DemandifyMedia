@@ -3,6 +3,8 @@ import { Poppins } from 'next/font/google'
 import Carousel from '../../../components/ui/Carousel'
 import EbooksGrid from '../../../components/ui/EbooksGrid'
 import { FlowButton } from '../../../components/ui/flow-button2'
+import { client } from '@/lib/sanity.client'
+import { postsQuery } from '@/lib/queries'
 const poppins = Poppins({ subsets: ['latin'], weight: ['400','600','800'] })
 export const metadata = {
   title: "Learning Lounge | Demandify Media",
@@ -10,7 +12,15 @@ export const metadata = {
     "Explore the Performance Suite: SEO, content, digital, prospecting and paid media insights, ebooks, and videos.",
 };
 
-export default function LearningLoungePage() {
+export default async function LearningLoungePage() {
+  type Post = {
+    _id: string
+    title?: string
+    excerpt?: string
+    coverImage?: { asset?: { url?: string } }
+  }
+  const posts = await client.fetch<Post[]>(postsQuery)
+
   const videos = [
     { src: "/img/Vdo1.png", title: "Scaling B2B Demand Gen", href: "https://www.youtube.com/watch?v=w5I-Hhkyo0I&feature=youtu.be" },
     { src: "/img/vdo 2.webp", title: "Content That Converts", href: "https://www.youtube.com/watch?v=a20FFRyywT8&t=56s" },
@@ -20,6 +30,14 @@ export default function LearningLoungePage() {
   ];
   // Add minimal placeholders to keep the grid balanced on desktop (3 columns)
   const placeholdersCount = (3 - (videos.length % 3)) % 3;
+  const blogSlides = posts
+    .filter((p) => p.coverImage?.asset?.url)
+    .slice(0, 10)
+    .map((p) => ({
+      title: p.title || 'Untitled',
+      src: p.coverImage!.asset!.url!,
+      excerpt: p.excerpt || undefined,
+    }))
   return (
     <main className={`min-h-screen overflow-hidden pt-28 md:pt-32 ${poppins.className}`}>
       {/* Hero */}
@@ -109,16 +127,7 @@ export default function LearningLoungePage() {
           <h2 className="text-3xl sm:text-4xl font-semibold leading-tight text-black">
             Unlocking trends that define success
           </h2>
-          <div className="mt-4 flex flex-wrap justify-center gap-3">
-            {["SEO", "Content", "Social", "Digital", "Prospect", "Paid Media"].map((t) => (
-              <span
-                key={t}
-                className="px-4 py-2 rounded-full border border-[#b300a5]/30 text-[#b300a5] text-xs font-semibold bg-[#b300a5]/5"
-              >
-                {t}
-              </span>
-            ))}
-          </div>
+         
         </div>
       </section>
 
@@ -132,17 +141,11 @@ export default function LearningLoungePage() {
           }} />
         </div>
         <div className="relative max-w-6xl mx-auto">
-          <Carousel
-            slides={[
-              { title: 'Optimized Campaigns', src: '/img/Hero.png' },
-              { title: 'Performance Suite', src: '/img/LL1.webp' },
-              { title: 'Visibility & Reach', src: '/img/Container.png' },
-              { title: 'Kaseya', src: '/img/Kaseya.png' },
-              { title: 'Kaspersky', src: '/img/Kapersky.png' },
-              { title: 'Red Hat', src: '/img/Redhat.png' },
-            ]}
-            interval={3000}
-          />
+          <Carousel slides={blogSlides.length ? blogSlides : [
+            { title: 'Optimized Campaigns', src: '/img/Hero.png' },
+            { title: 'Performance Suite', src: '/img/LL1.webp' },
+            { title: 'Visibility & Reach', src: '/img/Container.png' },
+          ]} interval={3000} />
         </div>
       </section>
 
